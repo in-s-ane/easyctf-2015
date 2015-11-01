@@ -1,0 +1,7 @@
+If we try to access the supersecretflag.txt file directly, we can't since we don't have permission.
+However, looking at how the site renders the about page, we can tell that the page is being sent as a
+GET parameter. If we change the value of page to supersecretflag.txt, we get the flag.
+
+http://web.easyctf.com:10200/?page=supersecretflag.txt
+
+easyctf{file_get_contents_is_9_safe}
