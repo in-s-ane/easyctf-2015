@@ -1,1 +1,0 @@
-http://web.easyctf.com:10200/?page=supersecretflag.txt
