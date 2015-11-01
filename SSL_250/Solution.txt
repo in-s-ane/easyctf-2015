@@ -1,0 +1,5 @@
+Upon connecting to the site, Chrome tells me that there is a privacy error, and that I might be in danger.
+However, this is all part of the problem, because if you view the SSL certificate we are using,
+you can see the flag.
+
+easyctf{never_trust_se1f_signd_certificates}
