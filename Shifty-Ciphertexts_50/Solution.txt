@@ -1,0 +1,5 @@
+The name of the problem strongly suggests that the ciphertext is encrypted with the Caesar cipher.
+Sure enough, if we crack the shift, we get the plaintext.
+
+This cipher involves shifty letters! easyctf{too_shifty_for_me}
+The flag is easyctf{too_shifty_for_me}
