@@ -1,0 +1,4 @@
+We need to find the first occurence of 1103 in pi.
+Google "find number in pi", enter 1103, get 3493.
+The site does not count the initial 3 in 3.14..., so add 1.
+flag: 3494
