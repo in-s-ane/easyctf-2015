@@ -5,4 +5,5 @@ Looking through the data, we can tell that there's not much to search for.
 We eventually find this:
 teamname=lolteam&school=lolschool&password=flag%7Bno%2C_lolteam_is_not_an_admin_account%7D&confirm=lolpasswordHTTP/1.1 200 OK
 
-flag{no_lolteam_is_not_an_admin_account}
+Urldecoded password:
+flag{no,_lolteam_is_not_an_admin_account}
