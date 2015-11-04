@@ -1,0 +1,3 @@
+View script.js:
+
+easyctf{remember_to_check_everywhere}
