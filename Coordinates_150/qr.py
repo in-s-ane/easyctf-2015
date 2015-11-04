@@ -2,15 +2,9 @@ import Image
 import ImageDraw
 from PIL import Image
 
-img = Image.new("RGB", (30,30), "black")
-# draw = ImageDraw.Draw(img)
+img = Image.new("RGB", (29,29), "black")
 
-# dotSize = 1
-
-# for (x,y) in coords:
-#     draw.ellipse([x,y,x+dotSize-1,y+dotSize-1], fill="black")
-
-img.save("qr.png")
+img.save("black.png")
 
 WHITE = (255, 255, 255, 255)
 BLACK = (0, 0, 0, 255)
@@ -23,6 +17,6 @@ def read(img):
     for (x, y) in coords:
         pixels[x, y] = WHITE
 
-    image.save('out.png')
+    image.save('qr.png')
 
-read("qr.png")
+read("black.png")
