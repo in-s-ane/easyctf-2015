@@ -1,12 +1,11 @@
-expr = raw_input()
-expr = expr.split()
-op = expr[0]
-num1 = int(expr[1])
-num2 = int(expr[2])
+f = open("math-class.in", "r").read().split(" ")
 
-res = 0
-if op == "add": res = num1 + num2
-elif op == "subtract": res = num1 - num2
+ans = ""
+if f[0] == "add":
+    ans = abs(int(f[1]) + int(f[2]))
+elif f[0] == "subtract":
+    ans = abs(int(f[1]) - int(f[2]))
 
-print res if res>0 else -res
+f = open("math-class.out", "w").write("%s\n" % (ans))
 
+# easyctf{have_y0u_had_enough_of_math_in_sk0ol_yet}
