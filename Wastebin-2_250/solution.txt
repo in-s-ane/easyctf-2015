@@ -1,0 +1,14 @@
+The login page appears at http://web.easyctf.com:10207/2/index.php
+Problem says google can't find it, so try going to /robots.txt
+http://web.easyctf.com:10207/robots.txt
+
+Content:
+User-agent: *
+Disallow: /2/password_Tj9WBkFpORmHYaYBG5GR7VZzgDaEM2e2aWeeCRtJ.txt
+
+Go to the page (http://web.easyctf.com:10207/2/password_Tj9WBkFpORmHYaYBG5GR7VZzgDaEM2e2aWeeCRtJ.txt):
+11FutLBObDdAnSIyEo9LF6TLiWuG8GpHSLnRBAYD4jUGM0O4Jbt8KPasU5CpAGmZW2dX97HX4xHau8asmrN5CzIiM6Xb51plWa3q
+
+This is the password. Go back to login, put "admin" for username, this thing for password, and get the flag
+
+easyctf{looks_like_my_robot_proof_protection_isn't_very_human_proof}
