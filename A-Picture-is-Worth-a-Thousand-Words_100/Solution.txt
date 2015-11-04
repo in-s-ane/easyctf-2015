@@ -1,0 +1,10 @@
+All we need to do is find the jpg file, so let's grep for some stuff that jpg files have.
+
+    $ grep -i jfif *
+
+We find a lot of matches, but we can see that the file UgeVjTlmZjNFvULk
+has binary matches. Bingo!
+
+Opening up the file, we can see the flag:
+
+easyctf{it_must_be_pretty_hard_reading_this}
