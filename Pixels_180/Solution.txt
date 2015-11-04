@@ -3,4 +3,4 @@ would give us the flag. We can create an image representation of the difference 
 
     compare mystery1.png mystery2.png -compose src diff.png
 
-easyctf{pretty_pixels...}
+easyctf{pretty_pixel_math}
