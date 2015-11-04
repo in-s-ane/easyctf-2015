@@ -1,0 +1,5 @@
+The problem description tells us that the secret file is probably a png.
+However, it's not a complete png, since it's missing the headers.
+Add the correct header, and open the repaired file.
+
+easyctf{troll3d}
