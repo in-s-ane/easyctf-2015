@@ -1,0 +1,5 @@
+View the page source for browse.html.
+
+Ctrl+F for 'easy':
+
+easyctf{geico_geck0s}
