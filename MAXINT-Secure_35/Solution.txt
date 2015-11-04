@@ -1,0 +1,5 @@
+Source has a javascript thing with the variable secret.
+
+Open the JS Console and type in "secret":
+
+easyctf{developer_console_is_your_friend}
