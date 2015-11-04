@@ -1,0 +1,3 @@
+strings sfs | grep easyctf
+
+easyctf{w0aw_stor1ng_fl4gs_in_pla1nt3xt_i5_s0oper_s3cure}
