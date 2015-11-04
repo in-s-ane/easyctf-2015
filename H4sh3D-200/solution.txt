@@ -1,0 +1,9 @@
+Reading the compute_hash() code, we can see that 4 characters
+in the input correspond to 2 characters in the output.
+This transformation is independent of the position in the input.
+Using this, we can try every 4-letter combination of some characters
+until we get a collision for each 2-letter sequence in the output.
+
+solve.py contains the code.
+
+aaeyaaduaadoaabxaaaTaahoaacyaals
