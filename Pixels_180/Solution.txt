@@ -1,0 +1,6 @@
+It was pretty easy to guess that we needed to compare these two pictures, and the difference
+would give us the flag. We can create an image representation of the difference with the following command:
+
+    compare mystery1.png mystery2.png -compose src diff.png
+
+easyctf{pretty_pixels...}
