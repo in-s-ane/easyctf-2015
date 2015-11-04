@@ -1,0 +1,4 @@
+First we know that b/c jpeg uses lorentz transformations to save space it does
+not represent true colors, to get the true colors, we convert it into png. Then
+we run solution.sh and pip the result into png-left-overs.txt, then run temp.py
+for lolz and try numbers yay!
