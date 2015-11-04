@@ -1,0 +1,16 @@
+Viewing the source of the page shows us this comment:
+<!-- SOURCE AT index.source.php -->
+
+Going to http://web.easyctf.com:10201/index.source.php shows us
+that there's a strcmp($_GET["password"], $pass) == 0 check.
+Attempting to view stuff.php (the file being included) does not work,
+so I googled "php strcmp bug".
+
+The first link lead to http://danuxx.blogspot.com/2013/03/unauthorized-access-bypassing-php-strcmp.html
+which tells us making password a non-string will make strcmp return 0,
+which is what we want.
+
+We make the query be http://web.easyctf.com:10201/index.php?password[]=a
+to get the flag.
+
+easyctf{never_trust_strcmp}
