@@ -1,0 +1,12 @@
+Note: This problem is basically a mirror of the CAMSCTF Murinae Mus problem. Thanks to Danny for the awesome scripts.
+
+The file is actually tcpdump data, so if we open it up in wireshark, we can see that theres a lot
+of USB data being passed around.
+We can extract this data via:
+
+    $ tshark -r ken_you_read_this -T fields -e usb.capdata > usb_data.txt
+
+Then we can take all the instances for when the mouse was "clicked" which is when the the first set of bytes is 01 or 02.
+Decoding this as binary where the left mouse click is 0 and the right mouse click is 1, we get the flag:
+
+{it's_over_9000!!!}
