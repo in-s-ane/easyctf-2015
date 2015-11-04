@@ -1,0 +1,7 @@
+Search by user:
+$ find / -user l33t_haxx0r 2>/dev/null
+/var/www/html/index.html
+
+Open the file, see that the flag is easyctf{c0mp1et3ly_r3kt}
+
+easyctf{c0mp1et3ly_r3kt}
