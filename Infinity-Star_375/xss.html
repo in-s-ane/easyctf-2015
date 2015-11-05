@@ -1,0 +1,18 @@
+-->
+<script src='/javascripts/infinity_star.js'></script>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script>
+var disable = 'input';
+$(disable).attr('disabled', 'disabled');
+$.getJSON('/api/bank/transfer', {
+    amount: '1000',
+    recipient: 'abc'
+}, function(result) {
+    display_message('#transfer_msg', (result.success == 1 ? 'success' : 'danger'), result.message, function() {
+        if (result.success == 1) { location.reload(true); }
+        else { $(disable).removeAttr('disabled'); }
+    });
+});
+</script>
+<!--
