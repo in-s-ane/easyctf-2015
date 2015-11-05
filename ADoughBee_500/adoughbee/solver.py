@@ -1,4 +1,4 @@
-from z3 import *
+#from z3 import *
 
 # x = 4946
 # y = -559023599
@@ -20,6 +20,8 @@ def base36encode(number):
 
 def base36decode(number):
     return int(number, 36)
+
+print base36decode('Z')
 
 a,b,c,d,e = BitVecs('a b c d e', 32)
 s = Solver()
