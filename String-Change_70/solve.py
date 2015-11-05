@@ -22,3 +22,4 @@ data[1] = data[1].replace("{","a").replace("[","A")
 fout.write(data[1] + "\n")
 fout.close()
 
+# easyctf{changing_things_up_once_in_a_while_is_gooood_for_you}
