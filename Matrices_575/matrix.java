@@ -26,32 +26,12 @@ public class matrix {
         return C;
     }
 
-    public static int dot(int[] x, int[] y) {
-        if (x.length != y.length) throw new RuntimeException("Illegal vector dimensions.");
-        int sum = 0;
-        for (int i = 0; i < x.length; i++)
-            sum = add(sum, multiply(x[i], y[i]));
-        return sum;
-    }
-
-    public static int[][] multiply(int[][] A, int[][] B) {
-        int mA = A.length;
-        int nA = A[0].length;
-        int mB = B.length;
-        int nB = B[0].length;
-        if (nA != mB) throw new RuntimeException("Illegal matrix dimensions.");
-        int[][] C = new int[mA][nB];
-        for (int i = 0; i < mA; i++)
-            for (int j = 0; j < nB; j++)
-                for (int k = 0; k < nA; k++)
-                    C[i][j] = add(C[i][j], multiply(A[i][k], B[k][j]));
-        return C;
-    }
-
     public static int[] multiply(int[][] A, int[] x) {
         int m = A.length;
         int n = A[0].length;
         if (x.length != n) throw new RuntimeException("Illegal matrix dimensions.");
+        System.out.printf("m: %d \t n: %d\n", m, n);
+        if (m != n) throw new RuntimeException("Illegal matrix dimensions2.");
         int[] y = new int[m];
         for (int i = 0; i < m; i++)
             for (int j = 0; j < n; j++)
@@ -59,24 +39,11 @@ public class matrix {
         return y;
     }
 
-    public static int[][] divide(int[] y, int[] x) { // returns y / x... also "fixes" mistakes
-        
-    }
-
-    public static int[] multiply(int[] x, int[][] A) {
-        int m = A.length;
-        int n = A[0].length;
-        if (x.length != m) throw new RuntimeException("Illegal matrix dimensions.");
-        int[] y = new int[n];
-        for (int j = 0; j < n; j++)
-            for (int i = 0; i < m; i++)
-                y[j] = add(y[j], multiply(A[i][j], x[i]));
-        return y;
-    
-
     public static void main(String[] args) {
 
-        if (args[1] == "e") {
+        System.out.println(args[0]);
+        if (args[0].contains("e")) {
+
             byte[] resultarr = encrypt(args);
             
             try (FileOutputStream fos = new FileOutputStream("output-yeech")) {
@@ -101,7 +68,9 @@ public class matrix {
 
     public static byte[] encrypt(String[] args) {
         int [][] key = random(N,N);
+        System.out.println("KEY:");
         printArr(key);
+        System.out.println("ENDKEY");
         
         String message = args[0];
         
@@ -148,9 +117,10 @@ public class matrix {
                 current_segment[j] = encrypted[i + j];
             }
 
-            int[][] key = divide(current_segment, messagebuf);
-            printArr(key);
+            //int[][] key = divide(current_segment, messagebuf);
+            //printArr(key);
         }
+        return new int[][] {{1,1,1}, {1,1,1}};
     }
     
     public static void printArr(int[][] arr){
