@@ -10,3 +10,4 @@ for num in eval(f):
 
 f = open("if-logic.out", "w").write(out)
 
+# easyctf{is_it_hi_or_hey_or_something_else}

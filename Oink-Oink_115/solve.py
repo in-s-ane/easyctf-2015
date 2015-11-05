@@ -19,3 +19,4 @@ out = out.strip()
 
 f = open("piglatin2.out", "w").write("%s\n" % (out))
 
+# easyctf{th0se_pesky_capit4ls_were_a_pa1n,_weren't_they?}
