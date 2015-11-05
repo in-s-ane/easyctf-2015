@@ -26,7 +26,9 @@ int RegisterSoftware(HWND h, unsigned int message, unsigned int wParam, int iPar
             grp = toupper(grp)
             num = frombase36(grp)
             y ^= x * num
-            
+/*
+ * y ^ (x * a) ^ (x * b) ^ (x * c) ^ (x * d) ^ (x * e) ^ x == -86730271
+ */
         result = y ^ x
         if result == -86730271:
             Win //<----WE WANT THIS

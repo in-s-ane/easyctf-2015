@@ -1,0 +1,21 @@
+Reverse the relevant function and we get something like
+what's in reversed.txt.
+Then, use a constraint solver to solve the problem (solver.py).
+
+solve.py gives us:
+[e = 2617829,
+ d = 45064907,
+ c = 58737215,
+ a = 868615,
+ b = 15961375]
+e 1K3XH
+d QTWAZ
+c YYXXB
+a IM87
+b 9I3VJ
+
+
+Put them in order, add leading 0's to make every group 5 characters:
+0IM87 9I3VJ YYXXB QTWAZ 1K3XH
+Then remove the spaces:
+0IM879I3VJYYXXBQTWAZ1K3XH

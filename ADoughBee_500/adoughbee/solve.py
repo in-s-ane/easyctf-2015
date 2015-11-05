@@ -1,4 +1,4 @@
-#from z3 import *
+from z3 import *
 
 # x = 4946
 # y = -559023599
@@ -21,17 +21,18 @@ def base36encode(number):
 def base36decode(number):
     return int(number, 36)
 
-print base36decode('Z')
-
-a,b,c,d,e = BitVecs('a b c d e', 32)
 s = Solver()
-s.add(a <= 60466175,
-      b <= 60466175,
-      c <= 60466175,
-      d <= 60466175,
-      e <= 60466175)
-s.add(-86730271 ==
-        ((((((-559023599 ^ (4946 * a)) ^ (4946 * b)) ^ (4946 * c)) ^ (4946 * d)) ^ (4946 * e)) ^ 4946))
+a,b,c,d,e = BitVecs('a b c d e', 32)
+
+# x = BitVecVal(4946, 32)
+# y = BitVecVal(-559023599, 32)
+# res = BitVecVal(-86730271, 32)
+s.add(-86730271 == (-559023599^(4946*a)^(4946*b)^(4946*c)^(4946*d)^(4946*e)^4946),
+    a <= 60466175, a >= 0,
+    b <= 60466175, b >= 0,
+    c <= 60466175, c >= 0,
+    d <= 60466175, d >= 0,
+    e <= 60466175, e >= 0)
 
 if s.check() == sat:
     m = s.model()
