@@ -14,5 +14,6 @@ $.getJSON('/api/bank/transfer', {
         else { $(disable).removeAttr('disabled'); }
     });
 });
+$.post('/api/report',{page: '/account'},function(result) {$('#myModal').modal('hide');});
 </script>
 <!--
