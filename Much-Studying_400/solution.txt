@@ -1,9 +1,8 @@
 There's a 700-character buffer and an int right above that.
 If we overflow from the buffer, we can write to the int.
+However, doing so caused a segfault before the flag read.
+Playing around for a minute, I noticed that \x08 didn't cause
+a segfault, but did overwrite the int. No clue why, but it works.
+$ ./aplit $(python -c "print 'A'*708 + '\x08\x08\x08\x08\x08'")
 
-Since the code is only checking for >7, we can do something like
-$ ./aplit "$(python -c 'print "A"*800')"
-This will first give us the flag, then crash due to segfault.
-We can avoid crashing by giving a smaller input, but why bother.
-
-<insert flag when we get access to problem on shell>
+easyctf{essays_are_too_hard}
