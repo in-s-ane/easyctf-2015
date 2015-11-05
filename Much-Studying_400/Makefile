@@ -1,2 +1,2 @@
-all:
-	gcc -fno-stack-protector -z execstack -o aplit aplit.c
+(all):
+	gcc -m32 aplit.c -o aplit -fno-stack-protector -zexecstack -w

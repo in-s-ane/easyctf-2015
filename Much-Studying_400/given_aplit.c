@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
+
+char* flag = "easyctf{xxxxxxxxxxxxxx}";
 
 int main(int argc, char **argv) {
 	int score = 0;
@@ -15,13 +15,7 @@ int main(int argc, char **argv) {
 	printf("%s\n", buf);
 	printf("---------------------------------------------\n");
 	printf("According to our analysis, your response received a grade of %d!\n", score);
-	if (score > 12) {
-		uid_t uid = geteuid();
-		setresuid(uid, uid, uid);
-		FILE *fp;
-		fp = fopen("flag.txt", "r");
-		char flag[64];
-		fgets(flag, 64, (FILE*) fp);
+	if (score > 7) {
 		printf("Wow, you're an HONOR student! Here's a flag: %s\n", flag);
 	} else {
 		printf("Sorry, you can only view the FLAG if you received a score greater than 12.\n");
