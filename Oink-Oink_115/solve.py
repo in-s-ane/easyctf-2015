@@ -1,6 +1,8 @@
 def pigToEnglish(word):
     new = ""
-    if word[-3:] == "yay":
+    if word[:2] == "ou" and word[-3:] == "yay":
+        new = "y" + word[:-3]
+    elif word[-3:] == "yay":
         new = word[:-3]
     elif word[-2:] == "ay":
         new = word[-3] + word[:-3]
