@@ -1,5 +1,0 @@
-The problem mentions trains, so if we look up a train-related cipher, we find
-the rail fence cipher.
-
-By having 5 rails or rows in which to split the ciphertext into,
-the message is decrypted into "YEYTRAINS:)THEFLAGIS{CH0OCHOO}".

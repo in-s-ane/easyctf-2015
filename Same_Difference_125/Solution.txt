@@ -1,0 +1,1 @@
+run diff master_copy.txt suspicious.txt in shell
