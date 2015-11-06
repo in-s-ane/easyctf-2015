@@ -1,0 +1,5 @@
+Viewing the robots.txt file of the site, we find a mysterious page at /95125f09551360c5294d180b013d047d.html
+If we go to the page, we find the page where we submit our eggs to.
+They also give us a nice egg to submit:
+
+egg{gotta_catch_'em_all}

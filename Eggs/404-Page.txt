@@ -1,0 +1,5 @@
+Ok, ok, here's your flag. 6567677b6567675f6e6f745f666f756e647d Just kidding. Click here to go back home.
+
+>> "6567677b6567675f6e6f745f666f756e647d".decode("hex")
+
+egg{egg_not_found}
