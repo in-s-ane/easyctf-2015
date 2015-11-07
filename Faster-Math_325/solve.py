@@ -151,3 +151,5 @@ def answer():
 
 if __name__ == '__main__':
     answer()
+
+# Congrats bruh. U da real mvp. Here's your flag: easyctf{A+_for_A+_eff0rt!}

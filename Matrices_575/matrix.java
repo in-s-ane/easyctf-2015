@@ -57,11 +57,12 @@ public class matrix {
             try {
                 Path path = Paths.get("./output1");
                 byte[] data = Files.readAllBytes(path);
-                int[][] key = decrypt(args[1], data);
-                printArr(key);
+                String content = new Scanner(new File("message1")).nextLine();
+                genCoeffMatrix(content, data, "coeffMatrix.txt");
             }
             catch (Exception e) {
                 System.out.println("oops?");
+                e.printStackTrace();
             }
         }
     }
@@ -98,7 +99,43 @@ public class matrix {
         return resultarr;
     }
 
-    public static int[][] decrypt(String msg, byte[] encrypted) {
+    public static void genCoeffMatrix(String msg, byte[] encrypted, String path) {
+        int[][] coeffMatrix = new int[336][256];
+        int[] messagebuf = new int[N];
+
+        for (int i = 0 ; i < msg.length() - 1 ; i+=N) {
+            for (int j = 0 ; j < N ; j++) {
+                if (i + j < msg.length()) {
+                    messagebuf[j] = messagebuf[j]^(int) msg.charAt(i + j); // 'cept we really don't care lol
+                }
+                else {
+                    messagebuf[j] = 0; // padding
+                }
+            }
+
+            for (int j = 0 ; j < N ; j++) {
+                for (int k = 0 ; k < N ; k++) {
+                    coeffMatrix[i + j][j * N + k] = messagebuf[k];
+                }
+            }
+        }
+
+        // I F**KING HATE JAVA SO MUCH
+        try {
+        PrintWriter writer = new PrintWriter(path, "UTF-8");
+        writer.println("[");
+        for (int i = 0 ; i < 336 ; i++) {
+            writer.print("[");
+            for (int j = 0 ; j < 255 ; j++) {
+                writer.printf("%d, ", coeffMatrix[i][j]);
+            }
+            writer.printf("%d],\n", coeffMatrix[i][255]);
+        }
+        writer.println("]");
+        } catch (Exception e) {e.printStackTrace();}
+    }
+
+    public static int[][] getKey(String msg, byte[] encrypted) {
         //int [][] key = new int[N][N];
         //printArr(key);
 
