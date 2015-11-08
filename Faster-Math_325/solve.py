@@ -120,7 +120,7 @@ def answer():
 
             #the following block attempts to correct for
             #the brokenness of the server's code
-            #because it's been 2-3 days and they haven't fixed it yet
+            #because ezctf organizers cant program
             if set([1,5,10,25,100,500]) <= set(S) and 1000 not in S:
                 S += [1000]
                 if seconds <= 10:
