@@ -2,11 +2,13 @@ fin = open("yuno.jpg")
 DATA = fin.read() # Get raw data
 fin.close()
 
-counter = 219
+counter = 0
 
-#while counter < 400:
-fout = open("EXTRACTED" + str(counter), 'w')
-#    fout.write(DATA[counter:len(DATA) - 1])
-#    fout.close()
-#    counter += 1
+print("FOOTER: " + repr(DATA[-2:]))
+
+while counter < len(DATA):
+    fout = open("EXTRACTED" + str(counter), 'w')
+    fout.write(DATA[counter : len(DATA) - 2])
+    fout.close()
+    counter += 1
 
