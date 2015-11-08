@@ -1,0 +1,5 @@
+By looking at the hex, we can see that there is a hidden rtf file.
+Once we extract the rtf file, we can see an encrypted message. We can
+decrypt the message by using the Skip cipher (http://rumkin.com/tools/cipher/skip.php), bypassing the first 5 letters and skipping 8 letters.
+
+theflagisyeymastery
