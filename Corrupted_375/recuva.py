@@ -4,9 +4,9 @@ fin.close()
 
 counter = 219
 
-while counter < 400:
-    fout = open("EXTRACTED" + str(counter), 'w')
-    fout.write(DATA[counter:])
-    fout.close()
-    counter += 1
+#while counter < 400:
+fout = open("EXTRACTED" + str(counter), 'w')
+#    fout.write(DATA[counter:len(DATA) - 1])
+#    fout.close()
+#    counter += 1
 
