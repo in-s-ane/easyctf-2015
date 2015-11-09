@@ -99,8 +99,7 @@ for subset in combinations(pmatrix, 16):
                 RHS.append(cmatrix[pmatrix.index(i)])
             E = matmul(RHS, invm) % keysetlen
             D = modMatInv(E, keysetlen)
+            print D
             break
     except:
         pass
-
-print D
