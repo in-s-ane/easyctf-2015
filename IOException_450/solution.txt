@@ -1,3 +1,22 @@
+Part 1:
+https://ioexceptionosu.wordpress.com/
+Save the image, notice that it's called ioexception_recon.png
+
+    $ exiftool ioexception_recon.png | tail
+
+    Pixels Per Unit Y               : 2834
+    Pixel Units                     : meters
+    Modify Date                     : 2015:11:08 16:09:31
+    Background Color                : 255 255 255
+    Creation Time                   : 10/24/15
+    Comment                         : part 1: easyctf{yeee3ee3ew_
+    Datecreate                      : 2015-11-08T16:09:31-05:00
+    Datemodify                      : 2015-11-08T16:09:31-05:00
+    Software                        : Adobe Fireworks CS6
+    Image Size                      : 256x256
+
+part 1: easyctf{yeee3ee3ew_
+
 Part 3:
 https://osu.ppy.sh/u/IOException
 For people playing EasyCTF 2015, the 3rd part of the flag for IOException's recon problem is bE#eeee_.
