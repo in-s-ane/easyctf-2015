@@ -58,7 +58,7 @@ public class matrix {
                 Path path = Paths.get("./output1");
                 byte[] data = Files.readAllBytes(path);
                 String content = new Scanner(new File("message1")).nextLine();
-                genCoeffMatrix(content, data, "coeffMatrix.txt");
+                genCoeffMatrix(content, data, "sagescript.sage");
             }
             catch (Exception e) {
                 System.out.println("oops?");
@@ -102,6 +102,8 @@ public class matrix {
     public static void genCoeffMatrix(String msg, byte[] encrypted, String path) {
         int[][] coeffMatrix = new int[336][256];
         int[] messagebuf = new int[N];
+        System.out.println(msg.length());
+        System.out.println(encrypted.length);
 
         for (int i = 0 ; i < msg.length() - 1 ; i+=N) {
             for (int j = 0 ; j < N ; j++) {
@@ -122,17 +124,28 @@ public class matrix {
 
         // I F**KING HATE JAVA SO MUCH
         try {
-        PrintWriter writer = new PrintWriter(path, "UTF-8");
-        writer.println("[");
-        for (int i = 0 ; i < 336 ; i++) {
-            writer.print("[");
-            for (int j = 0 ; j < 255 ; j++) {
-                writer.printf("%d, ", coeffMatrix[i][j]);
+            PrintWriter writer = new PrintWriter(path, "UTF-8");
+            writer.println("A = Matrix([");
+            for (int i = 0 ; i < 256 ; i++) {
+                writer.print("[");
+                for (int j = 0 ; j < 255 ; j++) {
+                    writer.printf("%d, ", coeffMatrix[i][j]);
+                }
+                writer.printf("%d],\n", coeffMatrix[i][255]);
             }
-            writer.printf("%d],\n", coeffMatrix[i][255]);
+            writer.println("])");
+            writer.print("w = vector([");
+            for (int i = 0 ; i < 256 ; i++) {
+                writer.printf("%d, ", (encrypted[i] & 0xFF));
+            }
+            writer.println("])");
+            writer.println("S = A \\ w");
+            writer.println("print S");
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("oops\n");
+            e.printStackTrace();
         }
-        writer.println("]");
-        } catch (Exception e) {e.printStackTrace();}
     }
 
     public static int[][] getKey(String msg, byte[] encrypted) {
