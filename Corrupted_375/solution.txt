@@ -1,0 +1,16 @@
+We find the image from google search:
+https://pp.vk.me/c625217/v625217819/1eec5/5WzbbhtpMkQ.jpg
+
+diff <(xxd yuno.jpg) <(xxd original.jpg) | less
+
+The above command shows us a few lines of diff, but only some of it differs:
+Sometimes by 1 sometimes by 0.
+
+The difference, character by character, is:
+
+011001010110000101110011011110010110001101110100011001100111101101111001011101010110111001101111011011110011000001101111011011110110111101101111011011110110111101101111011011110110111101101111011011110110111100110000011011110111110100000000
+
+This becomes:
+
+easyctf{yunoo0oooooooooooo0o}
+
