@@ -17,6 +17,11 @@ Save the image, notice that it's called ioexception_recon.png
 
 part 1: easyctf{yeee3ee3ew_
 
+Part 2:
+https://musescore.com/user/2950966/scores/899891
+View the bottom of the last page of the sheet music
+part 2: sha44aal11l1l1l_
+
 Part 3:
 https://osu.ppy.sh/u/IOException
 For people playing EasyCTF 2015, the 3rd part of the flag for IOException's recon problem is bE#eeee_.
@@ -24,3 +29,5 @@ For people playing EasyCTF 2015, the 3rd part of the flag for IOException's reco
 Part 4:
 https://gist.github.com/failedxyz/02b37ceec75751bca63d/revisions
 [Part 4 for IOException recon is: azzzzzsimmileitted!!}]
+
+easyctf{yeee3ee3ew_sha44aal11l1l1l_bE#eeee_azzzzzsimmileitted!!}
