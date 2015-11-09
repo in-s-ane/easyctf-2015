@@ -49,6 +49,13 @@ def minor(A,i,j):    # Return matrix A with the ith row and jth column deleted
     p=p+1
   return minor
 
+def transpose(A):   # returns A transposed
+    B = zeros(shape=(len(A), len(A)))
+    for i in len(A):
+        for j in len(A[i]):
+            B[j][i] = A[i][j]
+    return B
+
 blocksize = 16
 keysetlen = 251
 
@@ -82,15 +89,14 @@ for i in range(0, len(ciphertext), blocksize):
         column.append(ciphertext[j])
     cmatrix.append(column)
 
-for i in range(0, len(pmatrix)):
-    print str(i) + ": " + str(pmatrix[i])
+RHS = []
 
 for subset in combinations(pmatrix, 16):
     try:
         invm = modMatInv(subset, keysetlen)
         if invm[0][0] == int(invm[0][0]):
             for i in subset:
-                RHS.append(cmatrix[pmatrix.index[i]])
+                RHS.append(cmatrix[pmatrix.index(i)])
             E = matmul(RHS, invm) % keysetlen
             D = modMatInv(E, keysetlen)
             break
