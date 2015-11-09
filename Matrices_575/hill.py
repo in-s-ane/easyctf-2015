@@ -75,10 +75,11 @@ while (len(plaintext) < len(ciphertext)):
 
 pmatrix = []
 
+column = [0] * blocksize
+
 for i in range(0, len(plaintext), blocksize):
-    column = []
-    for j in range(i, i + blocksize):
-        column.append(plaintext[j])
+    for j in range(0, blocksize):
+        column[j] = column[j]^plaintext[i + j]
     pmatrix.append(column)
 
 cmatrix = []
@@ -101,5 +102,7 @@ for subset in combinations(pmatrix, 16):
             D = modMatInv(E, keysetlen)
             print D
             break
+    except KeyboardInterrupt:
+        exit()
     except:
         pass
