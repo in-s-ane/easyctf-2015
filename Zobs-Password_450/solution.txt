@@ -1,0 +1,13 @@
+We receive some text in base64 and decode that to get
+a bunch of e,N, and c's. All of these numbers are small, so
+we look up the factors of N on factordb.com (we could use
+a program like msieve for bigger numbers). With the factors,
+we compute the totient of n: (p-1)*(q-1).
+With the totient, it's simply a matter of:
+    d = modinv(e, totient)
+    pow(c, d, N)
+
+Doing this for the first set gives us the flag.
+Out of curiosity, I tried the 2nd one and it gave the same result.
+
+flag{sH0r+_m3554g3}

@@ -1,0 +1,15 @@
+Pdf files end with EOF in the hex, and if we try looking for EOF, we can see that there are plenty other
+bytes afterwards. After extracting those bytes, we find that it is a .wav file, so let's fire it up in audacity.
+Listening to the right channel, its clear that some sort of binary is being played.
+(If you somehow can't differentiate the tones, just view the pitches as seen in audio.png)
+Writing down the binary, we get something like this:
+
+    1001100111001000010101011000000011001000100100000100000000100111001101011100110110011
+
+(Note that you may have swapped the zeroes and ones, but that's fine)
+
+Decoding it from binary gives us garbage, but remembering a problem from another CTF, I
+thought of Baconian, which turned out to be the correct cipher. Decode the baconian to get the flag.
+
+http://rumkin.com/tools/cipher/baconian.php
+THEFLAGISBACONONT

@@ -1,0 +1,68 @@
+If we look at the disassembly, we see a constant 0x1357 (4951)
+in the same function that prints out the nuclear launch codes.
+The constant is added to [EBP-3D], so it's possible that [EBP-3D]
+is (5068-4951=) 117.
+However, this was not the case. It was 65 (0x41) for me, and the sum
+of the two numbers would be 5016, not 5068. I thought that maybe
+the (5068-5016=) 58 difference was intentional, and modified
+the binary (using OllyDbg) to use (23102-52=) 23050 (0x5a0a)
+instead of 4951+[EBP-3D]. The launch code I got didn't work,
+so I left this trail and other other things.
+
+After a while, I came back to the 4951+[EBP-3D] I originally found
+and made it 23102, ignoring that 5016 != 5068.
+The resulting binary gave the correct launch code.
+
+6672-50f3-c62b-7231
+
+Here's a snippet of the original assembly in the function at 0x401144:
+0040116D   E8 D6180000    CALL <JMP.&msvcrt.fgets>                 ; fgets
+00401172   83C4 0C        ADD ESP,0C
+00401175   8D45 C0        LEA EAX,DWORD PTR SS:[EBP-40]
+00401178   50             PUSH EAX                                 ; s
+00401179   E8 D2180000    CALL <JMP.&msvcrt.strlen>                ; strlen
+0040117E   83C4 04        ADD ESP,4
+00401181   8945 BC        MOV DWORD PTR SS:[EBP-44],EAX
+00401184   B8 57130000    MOV EAX,1357
+00401189   8945 B8        MOV DWORD PTR SS:[EBP-48],EAX
+0040118C   8B45 B8        MOV EAX,DWORD PTR SS:[EBP-48]
+0040118F   0FBE4D C3      MOVSX ECX,BYTE PTR SS:[EBP-3D]
+00401193   01C8           ADD EAX,ECX
+00401195   8945 B8        MOV DWORD PTR SS:[EBP-48],EAX
+00401198   8B45 BC        MOV EAX,DWORD PTR SS:[EBP-44]
+0040119B   50             PUSH EAX
+0040119C   8B45 B8        MOV EAX,DWORD PTR SS:[EBP-48]
+0040119F   50             PUSH EAX
+004011A0   8D45 C0        LEA EAX,DWORD PTR SS:[EBP-40]
+004011A3   50             PUSH EAX
+004011A4   E8 2BFFFFFF    CALL LaunchCo.004010D4
+
+Here is the same area, modified:
+0040116D   E8 D6180000    CALL <JMP.&msvcrt.fgets>                 ; fgets
+00401172   83C4 0C        ADD ESP,0C
+00401175   8D45 C0        LEA EAX,DWORD PTR SS:[EBP-40]
+00401178   50             PUSH EAX                                 ; s
+00401179   E8 D2180000    CALL <JMP.&msvcrt.strlen>                ; strlen
+0040117E   83C4 04        ADD ESP,4
+00401181   8945 BC        MOV DWORD PTR SS:[EBP-44],EAX
+00401184   B8 3E5A0000    MOV EAX,5A3E                  ;Modified
+00401189   8945 B8        MOV DWORD PTR SS:[EBP-48],EAX
+0040118C   90             NOP                           ;Modified start
+0040118D   90             NOP
+0040118E   90             NOP
+0040118F   90             NOP
+00401190   90             NOP
+00401191   90             NOP
+00401192   90             NOP
+00401193   90             NOP
+00401194   90             NOP
+00401195   90             NOP
+00401196   90             NOP
+00401197   90             NOP                           ;Modified end
+00401198   8B45 BC        MOV EAX,DWORD PTR SS:[EBP-44]
+0040119B   50             PUSH EAX
+0040119C   8B45 B8        MOV EAX,DWORD PTR SS:[EBP-48]
+0040119F   50             PUSH EAX
+004011A0   8D45 C0        LEA EAX,DWORD PTR SS:[EBP-40]
+004011A3   50             PUSH EAX
+004011A4   E8 2BFFFFFF    CALL LaunchCo.004010D4

@@ -43,8 +43,6 @@ def answer():
         prob = s.recv(1024)
         print prob
         if "flag" in prob or "{" in prob:
-            print prob
-            open("FLAGG", "a").write(prob + "\n\n")
             sys.exit(0)
         if "seconds" in prob:
             seconds =float(prob.split("seconds")[0].split()[-1])
@@ -120,19 +118,19 @@ def answer():
 
             #the following block attempts to correct for
             #the brokenness of the server's code
-            #because it's been 2-3 days and they haven't fixed it yet
-            if set([1,5,10,25,100,500]) <= set(S) and 1000 not in S:
-                S += [1000]
-                if seconds <= 10:
-                    S += [2000]
-            if set([1,5,10,25,100]) <= set(S) and 500 not in S:
-                S += [500]
-                if seconds <= 12:
-                    S += [1000]
-            if set([1,5,10,25]) <= set(S) and 100 not in S:
-                S += [100]
-                if seconds <= 11.53:
-                    S += [500]
+            #because ezctf organizers cant program
+            # if set([1,5,10,25,100,500]) <= set(S) and 1000 not in S:
+            #     S += [1000]
+            #     if seconds <= 10:
+            #         S += [2000]
+            # if set([1,5,10,25,100]) <= set(S) and 500 not in S:
+            #     S += [500]
+            #     if seconds <= 12:
+            #         S += [1000]
+            # if set([1,5,10,25]) <= set(S) and 100 not in S:
+            #     S += [100]
+            #     if seconds <= 11.53:
+            #         S += [500]
 
             amt = prob.split("$")[1].split()[0]
             dollars = int(amt.split(".")[0])

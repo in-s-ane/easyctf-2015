@@ -1,0 +1,3 @@
+run modified hardwood.py, piece out the three strings into something readable
+and get:
+easyctf{fl00r_d1visi0n}
