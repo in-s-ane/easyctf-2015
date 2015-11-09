@@ -19,7 +19,7 @@ def egcd(a,b): # Extended Euclidean Algorithm
 def modinv(a,m): # Modular Inverse Finder
 	g, x, y = egcd(a,m);
 	if g != 1:
-		raise Exception('modular inverse does not exist');
+		raise ArithmeticError('modular inverse does not exist');
 	else:
 		return x % m;
 
@@ -102,7 +102,5 @@ for subset in combinations(pmatrix, 16):
             D = modMatInv(E, keysetlen)
             print D
             break
-    except KeyboardInterrupt:
-        exit()
-    except:
+    except ArithmeticError:
         pass
