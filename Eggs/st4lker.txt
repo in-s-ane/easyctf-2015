@@ -1,0 +1,6 @@
+Found this while trying to do IOException
+
+Going onto the Anomalous Materials github website over at anomat.github.io, we find an
+egg in the source.
+
+egg{lel_st4lk3r_much}
