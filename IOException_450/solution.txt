@@ -1,9 +1,7 @@
 Part 3:
-James:
 https://osu.ppy.sh/u/IOException
 For people playing EasyCTF 2015, the 3rd part of the flag for IOException's recon problem is bE#eeee_.
 
 Part 4:
-Brian
 https://gist.github.com/failedxyz/02b37ceec75751bca63d/revisions
 [Part 4 for IOException recon is: azzzzzsimmileitted!!}]
