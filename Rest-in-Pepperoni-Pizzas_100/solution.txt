@@ -1,0 +1,6 @@
+Hidden within the pdf is a picture, which you can extract by using an online tool or a simple hex
+editor. The picture contains a bunch of fragmented pieces of the flag (throwback to HSF).
+You could print out the image and do it manually, but all you really need to do is tilt your head around to
+reconstruct the flag.
+
+easyctf{can_y0u_put_4ll_the_pieces_2gether?}
