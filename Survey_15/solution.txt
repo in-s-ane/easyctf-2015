@@ -1,0 +1,3 @@
+Finish the survey and get the flag at the end.
+
+easyctf{it's_fin4lly_over!!}
