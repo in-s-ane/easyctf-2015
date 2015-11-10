@@ -49,12 +49,14 @@ def minor(A,i,j):    # Return matrix A with the ith row and jth column deleted
     p=p+1
   return minor
 
-def transpose(A):   # returns A transposed
-    B = zeros(shape=(len(A), len(A)))
-    for i in len(A):
-        for j in len(A[i]):
-            B[j][i] = A[i][j]
-    return B
+def to_row_major(A):    # takes in a column majored array and row majors it
+    row_major = []
+    for i in range(len(A[0])):
+        row = []
+        for j in range(len(A)):
+            row.append(A[j][i])
+        row_major.append(row)
+    return row_major
 
 blocksize = 16
 keysetlen = 251
@@ -75,11 +77,13 @@ while (len(plaintext) < len(ciphertext)):
 
 pmatrix = []
 
-column = [0] * blocksize
+oldcolumn = [0] * blocksize
 
 for i in range(0, len(plaintext), blocksize):
+    column = [0] * blocksize
     for j in range(0, blocksize):
-        column[j] = column[j]^plaintext[i + j]
+        column[j] = oldcolumn[j]^plaintext[i + j]
+    oldcolumn = column
     pmatrix.append(column)
 
 cmatrix = []
@@ -91,16 +95,49 @@ for i in range(0, len(ciphertext), blocksize):
     cmatrix.append(column)
 
 RHS = []
+doublecheckC = to_row_major(cmatrix)
+pcheck = to_row_major(pmatrix)
 
+
+#print pmatrix
 for subset in combinations(pmatrix, 16):
+    RHS = []
     try:
-        invm = modMatInv(subset, keysetlen)
+        subset2 = to_row_major(subset)
+        invm = modMatInv(subset2, keysetlen)
         if invm[0][0] == int(invm[0][0]):
             for i in subset:
                 RHS.append(cmatrix[pmatrix.index(i)])
-            E = matmul(RHS, invm) % keysetlen
-            D = modMatInv(E, keysetlen)
-            print D
-            break
+            RHS = to_row_major(RHS)
+            E = matmul(invm, RHS) % keysetlen
+            checkC = matmul(E, pcheck) % keysetlen
+            if (int(checkC[0][0]) == doublecheckC[0][0] and
+                int(checkC[1][1]) == doublecheckC[1][1]):
+                D = modMatInv(E, keysetlen)
+                break
     except ArithmeticError:
         pass
+
+a = open("output2", 'rb').read()
+flagenc = []
+for i in a:
+    flagenc.append(ord(i))
+
+fmatrix = []
+
+for i in range(0, len(flagenc), blocksize):
+    column = []
+    for j in range(i, i + blocksize):
+        column.append(flagenc[j])
+    fmatrix.append(column)
+
+fmatrix = to_row_major(fmatrix)
+
+final = matmul(D,fmatrix) % keysetlen
+
+flag = ""
+for i in final:
+    for j in i:
+        flag += chr(int(j))
+
+print flag
