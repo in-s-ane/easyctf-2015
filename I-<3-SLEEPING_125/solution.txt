@@ -10,4 +10,4 @@ Basically you construct a square like the following with the exact labellings
 
 Then you simply pairup the numbers and you get the flag
 
-serversarehadchaosagentosleep
+serversarehadchaosagentgotosleep
