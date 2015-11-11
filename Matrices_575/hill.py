@@ -98,26 +98,6 @@ RHS = []
 doublecheckC = to_row_major(cmatrix)
 pcheck = to_row_major(pmatrix)
 
-
-#print pmatrix
-for subset in combinations(pmatrix, 16):
-    RHS = []
-    try:
-        subset2 = to_row_major(subset)
-        invm = modMatInv(subset2, keysetlen)
-        if invm[0][0] == int(invm[0][0]):
-            for i in subset:
-                RHS.append(cmatrix[pmatrix.index(i)])
-            RHS = to_row_major(RHS)
-            E = matmul(invm, RHS) % keysetlen
-            checkC = matmul(E, pcheck) % keysetlen
-            if (int(checkC[0][0]) == doublecheckC[0][0] and
-                int(checkC[1][1]) == doublecheckC[1][1]):
-                D = modMatInv(E, keysetlen)
-                break
-    except ArithmeticError:
-        pass
-
 a = open("output2", 'rb').read()
 flagenc = []
 for i in a:
@@ -133,11 +113,28 @@ for i in range(0, len(flagenc), blocksize):
 
 fmatrix = to_row_major(fmatrix)
 
-final = matmul(D,fmatrix) % keysetlen
 
-flag = ""
-for i in final:
-    for j in i:
-        flag += chr(int(j))
 
-print flag
+#print pmatrix
+for subset in combinations(pmatrix, 16):
+    RHS = []
+    try:
+        subset2 = to_row_major(subset)
+        invm = modMatInv(subset2, keysetlen)
+        if invm[0][0] == int(invm[0][0]):
+            for i in subset:
+                RHS.append(cmatrix[pmatrix.index(i)])
+            RHS = to_row_major(RHS)
+            E = matmul(invm, RHS) % keysetlen
+            checkC = matmul(E, pcheck) % keysetlen
+            D = modMatInv(E, keysetlen)
+            final = matmul(D,fmatrix) % keysetlen
+            final = to_row_major(final)
+            flag = ""
+            for i in final:
+                for j in i:
+                    flag += chr(int(j))
+
+            print flag
+    except ArithmeticError:
+        pass
