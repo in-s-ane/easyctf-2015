@@ -1,0 +1,7 @@
+If you take a look at the web source, there is a JS script with variables.
+The variable secret is probably the flag, but since the script doesn't tell you
+what the flag is, you can print out the value of secret in the JS console.
+
+> secret
+
+easyctf{developer_console_is_your_friend}
