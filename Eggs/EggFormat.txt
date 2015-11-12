@@ -1,6 +1,0 @@
-I downloaded most of the site and grep'd for "easyctf{" and found
-this:
-
-<code>easyctf{example_flag}</code>.<!-- and all easter eggs will have the format egg{lol_why_are_you_checkig_the_source_on_the_rules_page}
-
-egg{lol_why_are_you_checkig_the_source_on_the_rules_page}

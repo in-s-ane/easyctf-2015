@@ -1,0 +1,29 @@
+As with any web problem, let's first look at the source.
+Looking at the source, we find some incredibly horrible looking javascript code, which will probably
+reveal the flag to us if we run it. Running it in console tells us that "__" is mapped to
+fromCharCode, and it is being called repeatedly on a series of numbers. Let's output that, shall we?
+
+    "if (window.addEventListener) {
+    var index = 0;
+    var konami = [38,38,40,40,37,39,37,39,66,65,13];
+
+    window.addEventListener("keydown", function(e){
+        if (e.keyCode === konami[index])
+        {
+            index++; //valid key at the valid point
+
+            if (index == konami.length)
+            {
+                document.getElementById("valerie").innerHTML="01111011011011010110100101110011011100110110100101101111011011100111001101110101011000110110001101100101011100110111001101111101";
+            }
+        } else {
+            // incorrect code restart
+            index = 0;
+        }
+    });
+    }"
+
+We can input the konami code on the website and get the binary, or just grab the binary from here.
+Decode the binary to get the flag:
+
+{missionsuccess}

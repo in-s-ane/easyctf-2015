@@ -2,7 +2,7 @@ Michael Zhang said that the team breaking the rules isn't an observer team, nor 
 actual team, which led me to think that it was the EasyCTF team.
 
 We can request the EasyCTF team by going to https://www.easyctf.com/team?EasyCTF
-They have 9 people on their team, and that's breaking the rules.
+(Notice that they have 9 people on their team, and that's breaking 5 players per team rule)
 The page seems to be useless, and none of the users gives us the flag, but if you go into the console,
 we can see a javascript object. Open up the object and view its contents to find the flag
 

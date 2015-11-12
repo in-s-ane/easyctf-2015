@@ -1,2 +1,2 @@
-# in-s-ane-easyctf2015
-Team in/s/ane - EasyCTF 2015
+# in-s-ane-easyctf-2015
+EasyCTF 2015 write-ups by team in/s/ane

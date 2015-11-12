@@ -28,4 +28,6 @@ elif f[0] == "d":
 
 f = open("knownplaintext1.out", "w").write(out)
 
+# Looking at the test cases, it was clear that the hex codes for each character was being used somehow.
+# Further examination proves that it was a rot-1 but with hex.
 # easyctf{w0w_d4t_h3x_th0}

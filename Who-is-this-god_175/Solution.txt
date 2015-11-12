@@ -1,5 +1,0 @@
-Submitting an incorrect flag tells us to sharpen our minds. From this, we can guess that
-we need to sharpen the image to get the flag. If we sharpen the image a little bit, the flag
-becomes legible at the top left corner of the picture.
-
-easyctf{all_hail_michy}

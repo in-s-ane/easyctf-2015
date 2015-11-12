@@ -7,3 +7,5 @@ n = m #THEY MEANT N, NOT M -.-
 
 d = pow(c,e,n)
 print hex(d)[2:-1].decode("hex")
+
+# flag{l0l_l3l_k1k_k3k_;p;}

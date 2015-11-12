@@ -1,6 +1,0 @@
-Again, we need to convert from pcapng to pcap format to view it in wireshark.
-You can either extract the png file from wireshark and paste it into a file, or use NetworkMiner
-and automagically extract correct picture.
-
-Viewing the picture, we can see the flag:
-{pcap_fun!??}

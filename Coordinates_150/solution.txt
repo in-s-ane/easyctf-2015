@@ -1,0 +1,7 @@
+It's clear that the coordinates map out to a qr code, so let's write a script that does so.
+The image is too small for any tool to detect it, so I zoomed in with gimp and took a screenshot.
+Now we can decode the qr code and get the flag:
+
+    $ zbarimg resized.png
+
+easyctf{bet_y0u_read_that_wiki_page}

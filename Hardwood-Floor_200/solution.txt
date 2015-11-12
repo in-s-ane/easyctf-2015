@@ -1,3 +1,9 @@
-run modified hardwood.py, piece out the three strings into something readable
-and get:
+The encryption program divides the ascii values of each character by three. However, it is
+floored, so precision is lost. As a result, there are three possible characters for each number.
+Run modified hardwood.py, piece out the three strings into something readable
+
+Qucfl`ciofrifor---c`rxcrf{fl00r]c0uiri0l{
+Rvdgmadjpgsjgps...dasydsg|gm11s^d1vjsj1m|
+Sweh nbek qh tkhqt/// ebtzeth}hn22t_e2wktk2n}
+
 easyctf{fl00r_d1visi0n}

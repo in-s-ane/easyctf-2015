@@ -1,0 +1,9 @@
+Both the left and right channels are outputting different audio, and listening to the left channel
+reveals audio of http://ask.fm/dragonhuman/answer/119833531098. However, this is a red herring, and what
+we need to do is view the spectrogram of the right channel, which is the 'random' noise.
+
+Looking at the spectrogram, we see some sort of text towards the bottom, which seems to be the flag.
+If we speed up the audio with audacity, we can squash those characters together, making the flag more
+readable.
+
+easyctf{do_a_frustration}

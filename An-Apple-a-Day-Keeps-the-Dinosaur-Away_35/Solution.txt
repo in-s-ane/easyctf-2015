@@ -1,3 +1,0 @@
-strings apple.jpg | grep easyctf
-
-easyctf{w0w_much_appl3s}

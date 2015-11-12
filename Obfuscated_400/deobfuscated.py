@@ -29,7 +29,7 @@ def check_flag(s):
 
         # Looks something like this:
         # 1h4111111110101010113zdzd
-        # where z and d can be letters when xor'd give 30
+        # where z and d can be characters when xor'd give 30
 	if (ord(y[0]) ^ ord(z[0])) ^ 30 != 0:
 		return False
         print "Checkpoint 5"
@@ -57,8 +57,8 @@ def check_flag(s):
 
 print check_flag(sys.argv[1])
 
-# Note: It seems to run the check_flag function on our input, so your flag may vary.
+# Note: The grader seems to run the check_flag function on your input, so as long as it passes then it is a valid flag.
 
-# After getting past checkpoint 5, it was clear what the flag probably was.
-# Playing around with the values, I was able to guess a valid flag
-# A valid flag would be: Wh4t1aRe1TH0O0O0O0OS3?!?!
+# After getting past checkpoint 6, it was clear what the flag probably was.
+# Playing around with the values, I was able to guess a valid flag (which was also probably the intended one)
+# Wh4t_aRe_TH0O0O0O0OS3?!?!

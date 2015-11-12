@@ -1,6 +1,0 @@
-The directory seems to be empty, but its clear that theres some sort of hidden file
-
-    $ ls -al
-    $ cat .hidden_file
-
-easyctf{just_playing_h1de_and_seek_lel}

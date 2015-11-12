@@ -1,0 +1,13 @@
+The secret file is actually a zip archive, which we can extract to get a png file.
+However, the png is not a valid png, due to missing header bytes. Every valid png
+begins the following bytes:
+
+    89 50 4e 47 0d 0a 1a 0a
+
+However, our png begins with these bytes:
+
+    0d 0a 1a 0a 00 00 00 0d
+
+Replace the missing bytes using a hex editor or something to get the flag.
+
+easyctf{troll3d}

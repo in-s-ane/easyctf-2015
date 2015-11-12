@@ -1,0 +1,7 @@
+To analyze the data with wireshark, we need to convert the pcapng file to pcap format. (I used http://pcapng.com/)
+
+There's not much to search for, but if we follow the TCP stream of one of the packets, we find the following:
+teamname=lolteam&school=lolschool&password=flag%7Bno%2C_lolteam_is_not_an_admin_account%7D&confirm=lolpasswordHTTP/1.1 200 OK
+
+Urldecoded password:
+flag{no,_lolteam_is_not_an_admin_account}
