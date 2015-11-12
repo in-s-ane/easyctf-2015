@@ -8,6 +8,6 @@ However, our png begins with these bytes:
 
     0d 0a 1a 0a 00 00 00 0d
 
-Replace the missing bytes using a hex editor or something to get the flag.
+Add the missing bytes using a hex editor or something to get the flag.
 
 easyctf{troll3d}
